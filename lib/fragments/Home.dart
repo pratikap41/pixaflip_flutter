@@ -36,14 +36,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Home'
-        ),
-      ),
-      drawer: MainDrawer(),
-      body: Center(
+    return Center(
         child: Container(
           width: double.infinity,
           height: 140.0,
@@ -55,7 +48,7 @@ class _HomeState extends State<Home> {
                  onTap: (){
                    Navigator.pushNamed(context, "/AllPdf");
                  },
-                 color: Colors.grey[100],
+                 color: Theme.of(context).cardColor,
                  title: 'Show PDF',
                  image: 'assets/pdf.png',
                ),
@@ -63,14 +56,13 @@ class _HomeState extends State<Home> {
                  onTap: (){
                       Navigator.pushNamed(context, "/MyVideoPlayer");
                  },
-                 color: Colors.grey[100],
+                 color: Theme.of(context).cardColor,
                  title: 'Play Video',
                  image: 'assets/ic_play.png',
                ),
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }

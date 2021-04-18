@@ -6,6 +6,7 @@ class DrawerTopBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 206,
       width: double.infinity,
       padding: EdgeInsets.fromLTRB(16.0,60.0, 16.0, 16.0 ),
       color: Theme.of(context).primaryColor,

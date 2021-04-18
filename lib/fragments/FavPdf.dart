@@ -39,11 +39,7 @@ class _FavPdfState extends State<FavPdf> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Favourite'),
-      ),
-      body: _isLoading?Center(child: CircularProgressIndicator(),):
+    return _isLoading?Center(child: CircularProgressIndicator(),):
       ListView.builder(
         itemBuilder: (context,  index){
           return PdfCard(
@@ -54,8 +50,6 @@ class _FavPdfState extends State<FavPdf> {
           );
         },
         itemCount: pdfFav.length,
-      ),
-    );
-
+      );
   }
 }

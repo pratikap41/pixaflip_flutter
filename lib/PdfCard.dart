@@ -21,35 +21,35 @@ class _PdfCardState extends State<PdfCard> {
   }
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.all(5.0),
-      child: ListTile(
-        onTap: (){
-          Navigator.pushNamed(context, "/PdfView",  arguments: {"url": widget.url, "name": widget.name});
-        },
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0),
-        ),
-        tileColor: Colors.grey[100],
-        leading: Image(
-          image: AssetImage('assets/pdf.png'),
-        ),
-        title: Text(
-            '${widget.name}',
-            style: TextStyle(
-              fontWeight: FontWeight.w500,
-              fontSize: 15.0,
-              letterSpacing: 1.0,
-            ),
-        ),
-        subtitle: Text('${widget.description}'),
-        trailing: StarButton(
-          isStarred: widget.isFav,
-          iconSize: 40.0,
-          valueChanged: (_isFav) async{
-            DatabaseHelper db = DatabaseHelper();
-            print(await db.update(widget.name, _isFav?1:0));
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(25),
+      child: Card(
+        margin: EdgeInsets.all(5.0),
+        child: ListTile(
+          onTap: (){
+            Navigator.pushNamed(context, "/PdfView",  arguments: {"url": widget.url, "name": widget.name});
           },
+          tileColor: Theme.of(context).cardColor,
+          leading: Image(
+            image: AssetImage('assets/pdf.png'),
+          ),
+          title: Text(
+              '${widget.name}',
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 15.0,
+                letterSpacing: 1.0,
+              ),
+          ),
+          subtitle: Text('${widget.description}'),
+          trailing: StarButton(
+            isStarred: widget.isFav,
+            iconSize: 40.0,
+            valueChanged: (_isFav) async{
+              DatabaseHelper db = DatabaseHelper();
+              print(await db.update(widget.name, _isFav?1:0));
+            },
+          ),
         ),
       ),
     );

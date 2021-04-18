@@ -15,8 +15,7 @@ class ProfileFieldsUI extends StatelessWidget {
           children: [
             Icon(
               pf.icon,
-              color: Colors.grey[400],
-              size: 30.0,
+              size: 35.0,
             ),
             SizedBox(width: 20,),
             Column(
@@ -25,24 +24,24 @@ class ProfileFieldsUI extends StatelessWidget {
                 Text(
                   '${pf.field}',
                   style: TextStyle(
-                    letterSpacing: 1.2,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 13.0,
+                    letterSpacing: 1.0,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 14.0,
                   ),
                 ),
                 SizedBox(height: 5,),
                 Text(
                   '${pf.fieldValue}',
                   style: TextStyle(
-                    letterSpacing: 1.5,
-                    fontSize: 10,
+                    letterSpacing: 1.2,
+                    fontSize: 11,
                   ),
                 ),
               ],
             ),
           ],
         ),
-        Divider(height: 20.0, color: Colors.grey[200],)
+        Divider(height: 20.0,)
       ],
     );
   }

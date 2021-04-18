@@ -4,6 +4,10 @@ import 'package:pixaflip/MainDrawer/DrawerMenu.dart';
 import 'package:pixaflip/MainDrawer/DrawerTopBar.dart';
 
 class MainDrawer extends StatefulWidget {
+  Function onTap ;
+  int selectedFragment;
+  MainDrawer({ @required this.onTap, @required this.selectedFragment});
+
   @override
   _MainDrawerState createState() => _MainDrawerState();
 }
@@ -15,7 +19,11 @@ class _MainDrawerState extends State<MainDrawer> {
         child: Column(
           children: <Widget>[
             DrawerTopBar(),
-            DrawerMenu(),
+            SizedBox(height: 10,),
+            DrawerMenu(
+              selectedFragment: widget.selectedFragment,
+              onTap: widget.onTap,
+            ),
           ],
         ),
     );

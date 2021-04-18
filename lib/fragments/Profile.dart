@@ -17,6 +17,11 @@ class _ProfileState extends State<Profile> {
   void initState() {
     profileInfo = [
       ProfileField(
+          field: 'Email',
+          fieldValue: 'pratikap41@gmail.com',
+          icon: Icons.email
+      ),
+      ProfileField(
           field: 'Name',
           fieldValue: 'Pratik Patil',
           icon: Icons.account_circle_rounded
@@ -39,18 +44,11 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-            'Profile'
-        ),
-      ),
-      drawer: MainDrawer(),
-      body: Column(
+    return Column(
         children:  <Widget>[
           Container(
             width: double.infinity,
-            height: 196.0,
+            height: 206.0,
             padding: EdgeInsets.fromLTRB(16.0,16.0, 16.0, 16.0 ),
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -63,9 +61,10 @@ class _ProfileState extends State<Profile> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  width: 60.0,
-                  height: 60.0,
+                  width: 80.0,
+                  height: 80.0,
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
                     image: DecorationImage(
                       image: AssetImage('assets/profile_image.png'),
                       fit: BoxFit.fill,
@@ -79,7 +78,7 @@ class _ProfileState extends State<Profile> {
                     fontSize: 16,
                     letterSpacing: 1.5,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.white
                   ),
                 ),
                 Text(
@@ -100,7 +99,6 @@ class _ProfileState extends State<Profile> {
         ),
           ),
         ]
-      ),
-    );
+      );
   }
 }
